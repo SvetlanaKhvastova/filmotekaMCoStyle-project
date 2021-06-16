@@ -1,0 +1,187 @@
+.bars-common {
+  height: 7vw;
+  max-height: 100%;
+  width: 2vw;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 300px;
+  bottom: 0;
+
+  @include for-size(tablet) {
+    height: 4vw;
+    width: 1vw;
+  }
+}
+
+.bar-one {
+  left: 0;
+  right: 6vw;
+  top: 0;
+  bottom: 0;
+  box-shadow: 0 0 0 0.1vw cyan, 0 0 1vw 0 cyan, inset 0 0 0.5vw 0 cyan;
+
+  @include for-size(tablet) {
+    right: 4vw;
+  }
+}
+
+.bar-two {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  box-shadow: 0 0 0 0.1vw cyan, 0 0 1vw 0 cyan, inset 0 0 0.5vw 0 cyan;
+}
+
+.bar-three {
+  left: 6vw;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  box-shadow: 0 0 0 0.1vw cyan, 0 0 1vw 0 cyan, inset 0 0 0.5vw 0 cyan;
+
+  @include for-size(tablet) {
+    left: 4vw;
+  }
+}
+
+/* Rotating squares style */
+
+.squares-common {
+  height: 18vw;
+  max-height: 100%;
+  width: 18vw;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0%;
+  @include for-size(tablet) {
+    height: 10vw;
+    width: 10vw;
+  }
+}
+
+.square-one {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  box-shadow: 0 0 0 0.1vw cyan, 0 0 1vw 0 cyan, inset 0 0 0.5vw 0 cyan;
+}
+
+.square-two {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  box-shadow: 0 0 0 0.1vw cyan, 0 0 1vw 0 cyan, inset 0 0 0.5vw 0 cyan;
+}
+
+.bar-one {
+  transform: translateZ(0);
+  animation: barOne 1s 0.33s ease infinite;
+  -moz-animation: barOne 1s 0.33s ease infinite;
+
+  -webkit-animation: barOne 1s 0.33s ease infinite;
+
+  -o-animation: barOne 1s 0.33s ease infinite;
+}
+
+@keyframes barOne {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0.1vw cyan, 0 0 1vw 0 cyan, inset 0 0 0.5vw 0 cyan;
+  }
+  50% {
+    height: 2.5vw;
+    box-shadow: 0 0 0 0.1vw magenta, 0 0 1vw 0 magenta,
+      inset 0 0 0.5vw 0 magenta;
+  }
+}
+
+.bar-two {
+  transform: translateZ(0);
+  animation: barTwo 1s 0.66s ease infinite;
+  -moz-animation: barTwo 1s 0.66s ease infinite;
+
+  -webkit-animation: barTwo 1s 0.66s ease infinite;
+
+  -o-animation: barTwo 1s 0.66s ease infinite;
+}
+
+@keyframes barTwo {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0.1vw cyan, 0 0 1vw 0 cyan, inset 0 0 0.5vw 0 cyan;
+  }
+  50% {
+    height: 2.5vw;
+    box-shadow: 0 0 0 0.1vw magenta, 0 0 1vw 0 magenta,
+      inset 0 0 0.5vw 0 magenta;
+  }
+}
+
+.bar-three {
+  transform: translateZ(0);
+  animation: barThree 1s 0.99s ease infinite;
+  -moz-animation: barThree 1s 0.99s ease infinite;
+
+  -webkit-animation: barThree 1s 0.99s ease infinite;
+
+  -o-animation: barThree 1s 0.99s ease infinite;
+}
+
+@keyframes barThree {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0.1vw cyan, 0 0 1vw 0 cyan, inset 0 0 0.5vw 0 cyan;
+  }
+  50% {
+    height: 2.5vw;
+    box-shadow: 0 0 0 0.1vw magenta, 0 0 1vw 0 magenta,
+      inset 0 0 0.5vw 0 magenta;
+  }
+}
+
+.square-one {
+  transform: translateZ(0);
+  animation: squareOne 4s 0.99s ease infinite;
+  -moz-animation: squareOne 4s 0.99s ease infinite;
+
+  -webkit-animation: squareOne 4s 0.99s ease infinite;
+
+  -o-animation: squareOne 4s 0.99s ease infinite;
+}
+
+@keyframes squareOne {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+
+.square-two {
+  transform: translateZ(0);
+  animation: squareTwo 4s 0.99s ease infinite;
+  -moz-animation: squareTwo 4s 0.99s ease infinite;
+
+  -webkit-animation: squareTwo 4s 0.99s ease infinite;
+
+  -o-animation: squareTwo 4s 0.99s ease infinite;
+}
+
+@keyframes squareTwo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}

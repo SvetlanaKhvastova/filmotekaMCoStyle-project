@@ -1,0 +1,439 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 18vh;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 99%;
+    width: 100%;
+    height: 5px;
+    transform: translateZ(0);
+    background-color: lightseagreen;
+    animation: animate-border 20s infinite;
+  }
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), #0d121e),
+    url('../images/parallax.jpg');
+  background-position: 25% 60%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include for-size(tablet) {
+    height: 100vh;
+    align-items: end;
+    padding-top: 130px;
+    background-image: url('../images/parallax.jpg');
+    background-position: center;
+  }
+
+  @include for-size(desktop) {
+    background-image: unset;
+  }
+}
+.scene {
+  position: unset;
+  display: none;
+
+  @include for-size(desktop) {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding-top: 5%;
+    min-height: 100vh;
+  }
+}
+
+.layer__bg {
+  position: unset;
+  display: none;
+  overflow: hidden;
+  background: unset;
+  @include for-size(desktop) {
+    display: block;
+    position: absolute;
+    z-index: -100;
+    left: -10%;
+    top: -10%;
+    width: 120%;
+    height: 110%;
+    transform: translateZ(0);
+    transition: all 0.1s linear;
+    background: url('../images/parallax.jpg') center no-repeat;
+    background-size: cover;
+  }
+}
+
+.decoration-first {
+  position: unset;
+  display: none;
+
+  @include for-size(desktop) {
+    display: block;
+    position: absolute;
+    top: 85px;
+    left: -15%;
+    height: 100px;
+    width: 730px;
+    transition: all 0.1s linear;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.979),
+      rgba(0, 74, 77, 0)
+    );
+  }
+}
+
+.decoration-second {
+  position: unset;
+  display: none;
+
+  @include for-size(desktop) {
+    display: block;
+    position: absolute;
+    top: 190px;
+    right: -10%;
+    height: 300px;
+    width: 940px;
+    transition: all 0.1s linear;
+    background-image: linear-gradient(
+      to left bottom,
+      rgba(0, 0, 0, 0.753),
+      transparent
+    );
+  }
+}
+.header__menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  @include for-size(tablet) {
+    justify-content: end;
+  }
+}
+
+.home::before {
+  content: '';
+  display: none;
+  @include for-size(tablet) {
+    display: block;
+    position: absolute;
+    top: 20.5px;
+    left: -350px;
+    height: 2px;
+    width: 350px;
+    line-height: 0.7em;
+    transform: translateZ(0);
+    animation: animate-decoration 4s infinite;
+    background-color: lightseagreen;
+  }
+}
+.library {
+  position: relative;
+  margin-left: 15px;
+}
+.header__item.library::before {
+  display: none;
+  @include for-size(tablet) {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -283px;
+    left: 211px;
+    height: 300px;
+    width: 3px;
+    animation: animate-decoration 4s linear infinite;
+
+    background-color: lightseagreen;
+  }
+}
+.header__item {
+  align-items: center;
+  font-family: $header-font-family;
+  font-size: 30px;
+  z-index: 10;
+  padding-bottom: 5px;
+  cursor: pointer;
+
+  &-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 5px;
+    color: lightseagreen;
+    z-index: 10;
+
+    @include for-size(tablet) {
+      display: flex;
+      width: 100%;
+
+      font-size: 30px;
+      -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+      line-height: 0.7em;
+      outline: none;
+
+      transform: translateZ(0);
+      animation: animate 4s linear infinite;
+    }
+  }
+
+  @include for-size(desktop) {
+    transition: all 0.1s linear;
+  }
+}
+
+.signIn-user {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  padding: 0;
+  margin: 0;
+  font-family: 'Park of Victory Normal';
+  font-size: 14px;
+  line-height: 0.7rem;
+  border: none;
+  background-color: transparent;
+  transform: translateZ(0);
+  animation: animate 5s linear infinite;
+  cursor: pointer;
+
+  @include for-size(tablet) {
+    top: 1.5rem;
+    right: 3rem;
+    font-size: 20px;
+    line-height: 0.7rem;
+  }
+}
+
+.signUp-user {
+  position: absolute;
+  top: 1.5rem;
+  right: 6rem;
+  padding: 0;
+  margin: 0;
+  font-family: 'Park of Victory Normal';
+  font-size: 14px;
+  line-height: 0.7rem;
+  border: none;
+  background-color: transparent;
+  transform: translateZ(0);
+  animation: animate 5s linear infinite;
+  cursor: pointer;
+
+  @include for-size(tablet) {
+    top: 1.5rem;
+    right: 7rem;
+    font-size: 20px;
+    line-height: 0.7rem;
+  }
+}
+
+.signOut-user {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  padding: 0;
+  margin: 0;
+  font-family: 'Park of Victory Normal';
+  font-size: 14px;
+  line-height: 0.7rem;
+  border: none;
+  color: $accent-color2;
+  background-color: transparent;
+  transform: translateZ(0);
+  cursor: pointer;
+
+  @include for-size(tablet) {
+    top: 1.5rem;
+    right: 7rem;
+    font-size: 18px;
+    line-height: 0.7rem;
+  }
+}
+
+.signIn-user:hover,
+.signIn-user:focus,
+.signUp-user:hover,
+.signUp-user:focus,
+.signOut-user:hover,
+.signOut-user:focus {
+  animation: animate-logo 7s infinite;
+}
+
+.sign-user {
+  color: $primary-text-color;
+  animation: none;
+  cursor: auto;
+
+  &:hover {
+    animation: none;
+  }
+}
+
+.run__container {
+  display: flex;
+  flex-grow: 1;
+}
+.header__logo {
+  display: none;
+  position: unset;
+  z-index: 12;
+  width: 70px;
+  margin-left: 15px;
+
+  @include for-size(tablet) {
+    display: inline;
+    padding-bottom: 30px;
+    width: 100%;
+  }
+
+  @include for-size(desktop) {
+    padding-bottom: 0;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    width: 150px;
+  }
+
+  @include for-size(large-desktop) {
+    left: 45%;
+  }
+}
+
+.header__item_a {
+  display: flex;
+  align-items: center;
+}
+
+.header__item.current .header__item-title {
+  position: unset;
+  animation: none;
+  color: #ffebee;
+  text-shadow: 0 0 10px #ff1744, 0 0 20px#ff1744, 0 0 40px #ff1744,
+    0 0 80px #ff1744, 0 0 160px #ff1744;
+  &::before {
+    background-color: $accent-color3;
+    animation: none;
+    box-shadow: 0 0 10px $accent-shadow-color2, 0 0 2px $accent-shadow-color2,
+      0 0 3px $accent-shadow-color2, 0 0 3px $accent-shadow-color2,
+      0 0 6px $accent-shadow-color2;
+  }
+  @include for-size(desktop) {
+    position: relative;
+  }
+}
+.header__item.library.current.library {
+  &::before {
+    background-color: $accent-color3;
+    animation: none;
+    box-shadow: 0 0 10px $accent-shadow-color2, 0 0 2px $accent-shadow-color2,
+      0 0 3px $accent-shadow-color2, 0 0 3px $accent-shadow-color2,
+      0 0 6px $accent-shadow-color2;
+  }
+  @include for-size(desktop) {
+    position: relative;
+  }
+}
+
+.header__item:nth-child(2) {
+  margin-left: 15px;
+
+  @include for-size(tablet) {
+    margin-left: 0;
+  }
+}
+.header__item:last-child {
+  margin-left: auto;
+  margin-right: 15px;
+
+  @include for-size(tablet) {
+    margin-left: 40px;
+  }
+
+  @include for-size(desktop) {
+    margin-left: 40px;
+  }
+}
+
+.header__item-title.library {
+  display: inline;
+}
+
+.header__logo-text {
+  display: none;
+  margin-left: 10px;
+  font-size: 90px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  color: $accent-color3;
+  text-transform: uppercase;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+  line-height: 0.7em;
+  outline: none;
+  transform: translateZ(0);
+  animation: animate-logo 7s infinite;
+  @include for-size(tablet) {
+    display: inline;
+  }
+  @include for-size(desktop) {
+    display: inline;
+  }
+}
+
+.running__strokes {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header__runtext {
+  display: none;
+  margin-left: 100px;
+  font-size: 20px;
+  letter-spacing: 5px;
+  color: lightseagreen;
+  text-transform: uppercase;
+  transform: translateZ(0);
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+  animation: animate-runtext 4s linear infinite;
+  transition: all $transition-duration $timing-function;
+  animation-delay: 2s;
+  line-height: 0.5em;
+
+  &:hover,
+  &:active {
+    animation: none;
+    color: #ffebee;
+    text-shadow: 0 0 4px #ff1744, 0 0 4px#ff1744, 0 0 8px #ff1744,
+      0 0 8px #ff1744, 0 0 10px #ff1744;
+    cursor: pointer;
+  }
+  @include for-size(tablet) {
+    display: inline;
+  }
+  @include for-size(desktop) {
+    display: inline;
+  }
+}
+.header__runtext.current {
+  animation: none;
+  color: #ffebee;
+  text-shadow: 0 0 4px #ff1744, 0 0 4px#ff1744, 0 0 8px #ff1744, 0 0 8px #ff1744,
+    0 0 10px #ff1744;
+}
+
+.marquee {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+.header__runtext.stop {
+  display: none;
+}

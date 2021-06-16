@@ -1,0 +1,123 @@
+.pagination__btn {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: 1px solid #6ab1d7;
+  background-color: transparent;
+  color: $accent-color;
+
+  @include for-size(tablet) {
+    transform: translateZ(0);
+    animation: animate 5s infinite;
+    animation: animate-border-btn 2s infinite;
+  }
+}
+.pagination {
+  display: flex;
+}
+.pagination.is-hidden {
+  display: none;
+}
+
+.pagination__btn:hover,
+.pagination__btn:focus {
+  background-color: $accent-color;
+  color: white;
+  border: 2px solid white;
+  box-shadow: 0 0 10px $accent-color, 0 0 20px $accent-color, 0 0 10px,
+    0 0 10px $accent-color, 0 0 10px $accent-color;
+  outline: none;
+  animation: none;
+}
+
+.pagination__btn.active:hover,
+.pagination__btn.active:active {
+  background-color: $accent-color;
+  color: white;
+  border: 2px solid white;
+  box-shadow: 0 0 10px $accent-color, 0 0 20px $accent-color, 0 0 10px,
+    0 0 10px $accent-color, 0 0 10px $accent-color;
+  outline: none;
+  animation: none;
+}
+
+.pagination__turning-btn {
+  display: inline-block;
+  width: 30px;
+  margin-right: 10px;
+
+  font-size: 14px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  border: 2px solid $accent-shadow-color;
+  text-decoration: none;
+  color: lightseagreen;
+
+  background-color: transparent;
+
+  @include for-size(tablet) {
+    width: 40px;
+    padding: 5px 5px;
+    font-size: 18px;
+    color: $accent-color2;
+    border: none;
+    transform: translateZ(0);
+    animation: animate-border-btn 5s infinite, animate 5s infinite;
+  }
+}
+
+.pagination__turning-btn:hover,
+.pagination__turning-btn:focus {
+  animation: none;
+  border: 2px solid rgb(255, 117, 117);
+  box-shadow: 0 0 10px $accent-color2, 0 0 20px $accent-color2, 0 0 10px,
+    0 0 10px $accent-color2, 0 0 10px $accent-color2;
+  color: $accent-color2;
+  text-shadow: 0 0 10px lightskyblue, 0 0 20px lightskyblue,
+    0 0 40px lightskyblue, 0 0 80px lightskyblue, 0 0 160px lightskyblue;
+}
+
+.pagination__turning-btn:active {
+  outline: none;
+  border: 2px solid $accent-color;
+  box-shadow: none;
+}
+
+.pagination__turning-btn.is-hidden {
+  display: none;
+  outline: none;
+  border: 2px solid $accent-color;
+  box-shadow: none;
+}
+
+.pagination__btn.active {
+  animation: none;
+  border: 2px solid $accent-color3;
+  box-shadow: 0 0 10px $accent-shadow-color2, 0 0 20px $accent-shadow-color2,
+    0 0 10px, 0 0 10px $accent-shadow-color2, 0 0 10px $accent-shadow-color2;
+  color: $accent-color2;
+  text-shadow: 0 0 10px $accent-color3, 0 0 20px $accent-color3,
+    0 0 4px $accent-color3, 0 0 8px$accent-color3, 0 0 16px$accent-color3;
+}
+
+.active {
+  animation: none;
+  border: 2px solid $accent-color3;
+  box-shadow: 0 0 10px $accent-shadow-color2, 0 0 20px $accent-shadow-color2,
+    0 0 10px, 0 0 10px $accent-shadow-color2, 0 0 10px $accent-shadow-color2;
+  color: $accent-color2;
+  text-shadow: 0 0 10px $accent-color3, 0 0 20px $accent-color3,
+    0 0 4px $accent-color3, 0 0 8px$accent-color3, 0 0 16px$accent-color3;
+}
+
+.pagination__btn.library-filter__btn.active {
+  animation: none;
+  border: 2px solid $accent-color3;
+  box-shadow: 0 0 10px $accent-shadow-color2, 0 0 20px $accent-shadow-color2,
+    0 0 10px, 0 0 10px $accent-shadow-color2, 0 0 10px $accent-shadow-color2;
+  color: $accent-color2;
+  text-shadow: 0 0 10px $accent-color3, 0 0 20px $accent-color3,
+    0 0 4px $accent-color3, 0 0 8px$accent-color3, 0 0 16px$accent-color3;
+}

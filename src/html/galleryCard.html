@@ -1,0 +1,51 @@
+<section class="main is-hidden">
+  <div class="container main__container">
+    <form class="main__search-form is-hidden">
+      <div class="main__search-container">
+        <p class="search-form__choice">Search by:</p>
+        <span
+          class="search-form__option selected-option option-movie"
+          id="option-movie"
+          >movie</span
+        >
+        <span class="search-form__line">|</span>
+        <span class="search-form__option option-actor" id="option-actor"
+          >actor</span
+        >
+      </div>
+      <input
+        type="text"
+        class="form__control"
+        name="query"
+        id="search-form"
+        placeholder="What movie you wish?"
+        autocomplete="off"
+      />
+      <span class="search-form__clear material-icons"> clear </span>
+      <p class="main__error-notification is-hidden"></p>
+    </form>
+    <div class="bars-common bar-one"></div>
+    <div class="bars-common bar-two"></div>
+    <div class="bars-common bar-three"></div>
+    <div class="squares-common square-one"></div>
+    <div class="squares-common square-two"></div>
+    <button class="main__btn-scroll" title="Go to top"></button>
+    <div class="library-filter is-hidden">
+      <button
+        type="button"
+        class="button library-filter__btn btnWatched button__add"
+      >
+        Watched
+      </button>
+      <button
+        type="button"
+        class="button library-filter__btn btnQueue button__add"
+      >
+        Queue
+      </button>
+    </div>
+    <ul class="gallery__list enumeration js-gallery is-hidden"></ul>
+    <div class="pagination"></div>
+    <div class="films-library"></div>
+  </div>
+</section>

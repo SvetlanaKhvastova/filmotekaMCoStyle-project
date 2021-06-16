@@ -1,0 +1,66 @@
+@function multiple-box-shadow($n) {
+  $value: '#{random(2000)}px #{random(2000)}px #FFF';
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(1600)}px #{random(7000)}px #{$accent-color2}';
+  }
+  @return unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(500);
+$shadows-medium: multiple-box-shadow(300);
+$shadows-big: multiple-box-shadow(200);
+
+#stars {
+  @include for-size(tablet) {
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    transform: translateZ(0);
+    background: transparent;
+    box-shadow: $shadows-small;
+    animation: animStar 100s linear infinite;
+  }
+}
+
+#stars2 {
+  @include for-size(tablet) {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: transparent;
+    transform: translateZ(0);
+    box-shadow: $shadows-medium;
+    animation: animStar 60s linear infinite;
+  }
+}
+#stars3 {
+  @include for-size(tablet) {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: transparent;
+    transform: translateZ(0);
+    box-shadow: $shadows-big;
+    animation: animStar 100s linear infinite;
+
+    &:after {
+      content: ' ';
+      position: absolute;
+      top: 200px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: transparent;
+      box-shadow: $shadows-big;
+    }
+  }
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}

@@ -1,0 +1,21 @@
+/*
+ * Все паршалы импортировать в этот файл
+ */
+
+@import './base/normalize';
+@import './utils/variables';
+@import './utils/mixins';
+@import './utils/fonts';
+@import './base/preloader';
+@import './base/scroll';
+@import './base/bodyAnimation';
+@import './base/loader';
+@import './base/common';
+@import './layouts/header';
+@import './layouts/hero';
+@import './layouts/detailsPage';
+@import './layouts/galleryCard';
+@import './layouts/modal';
+@import './base/btnPagination';
+@import './layouts/footer';
+@import './layouts/reviews'

@@ -1,0 +1,46 @@
+.slider__item {
+  height: 400px;
+  padding: 10px;
+  margin-right: 15px;
+  background-position: 50% 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 8px;
+  cursor: pointer;
+
+  @include for-size(tablet) {
+    height: 610px;
+  }
+
+  &-title {
+    color: $accent-color2;
+    text-shadow: 0.1em 0.1em 0.1em $accent-shadow-color2;
+  }
+
+  &-rating {
+    color: $accent-color2;
+    text-shadow: 0.1em 0.1em 0.1em $accent-shadow-color2;
+  }
+}
+.tns-outer {
+  position: relative;
+}
+.tns-nav {
+  left: 50%;
+  bottom: 5%;
+  transform: translate(-50%, -5%);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 100;
+}
+
+.tns-nav button {
+  display: block;
+  margin-left: 10px;
+  width: 10px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: $accent-color;
+  border: 2px solid $accent-color2;
+}

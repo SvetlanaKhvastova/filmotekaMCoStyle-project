@@ -1,0 +1,178 @@
+.details-page {
+  margin: 40px 0;
+
+  @include for-size(desktop) {
+    margin: 60px 0;
+  }
+}
+
+.details-page__about {
+  padding-bottom: 40px;
+}
+
+.details-page__film {
+  @include for-size(tablet) {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+.details-page__foto {
+  position: relative;
+  height: 100%;
+  border: 3px solid $accent-color2;
+  box-shadow: 0 0 10px $accent-color, 0 0 20px $accent-color, 0 0 10px,
+    0 0 10px $accent-color, 0 0 10px $accent-color;
+
+  @include for-size(desktop) {
+    flex-shrink: 0;
+    width: 50%;
+  }
+}
+
+.details-page__description {
+  font-size: 16px;
+  color: white;
+  text-shadow: 0 0 3px lightskyblue, 0 0 2px lightskyblue, 0 0 1px lightskyblue,
+    0 0 1px lightskyblue, 0 0 2px lightskyblue;
+  @include for-size(tablet) {
+    margin-left: 30px;
+    width: 50%;
+  }
+}
+
+.details-page__title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  font-size: 30px;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+  line-height: 1em;
+  color: #ffebee;
+  text-shadow: 0 0 10px #ff1744, 0 0 20px#ff1744, 0 0 40px #ff1744,
+    0 0 80px #ff1744, 0 0 160px #ff1744;
+
+  @include for-size(tablet) {
+    margin-top: 40px;
+  }
+
+  @include for-size(desktop) {
+    margin-top: 50px;
+  }
+}
+
+th,
+td {
+  padding: 10px 15px;
+}
+
+.details-page__table {
+  margin-bottom: 40px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rows__vote {
+  padding: 5px 7px;
+  border-radius: 20%;
+}
+
+.details-page__text {
+  margin-bottom: 40px;
+  padding: 5px;
+  border-radius: 3%;
+  box-shadow: $popular-box-shadow;
+}
+
+.details-page__button {
+  display: flex;
+}
+
+.button__add {
+  text-decoration: none;
+  display: inline-block;
+
+  padding: 10px 20px;
+  width: 120px;
+  border: 3px solid $accent-shadow-color;
+  color: lightseagreen;
+  border-radius: 10px;
+  background-color: transparent;
+  text-transform: uppercase;
+
+  @include for-size(tablet) {
+    color: white;
+    border: none;
+    transform: translateZ(0);
+    animation: animate-border-btn 5s infinite, animate 5s infinite;
+    box-shadow: $popular-box-shadow;
+    transition: all $transition-duration $timing-function;
+  }
+}
+
+.button__add:not(:last-child) {
+  margin-right: 10px;
+
+  @include for-size(tablet) {
+    margin-right: 20px;
+  }
+  @include for-size(desktop) {
+    margin-right: 20px;
+  }
+}
+
+.button__add:hover {
+  animation: none;
+  border: 2px solid rgb(255, 117, 117);
+  text-shadow: 0 0 10px $accent-shadow-color2, 0 0 20px$accent-shadow-color2,
+    0 0 10px, 0 0 10px $accent-shadow-color2, 0 0 10px $accent-shadow-color2;
+  color: $accent-color2;
+  box-shadow: 0 0 10px $accent-shadow-color2, 0 0 20px $accent-shadow-color2,
+    0 0 10px, 0 0 10px $accent-shadow-color2, 0 0 10px $accent-shadow-color2;
+}
+
+.button__add:focus {
+  outline: none;
+  box-shadow: $focus-box-shadow;
+}
+
+.button__add.button-close {
+  padding: 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: $accent-color2;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  text-shadow: 0.1em 0.1em 0.1em $accent-color4;
+
+  background: linear-gradient(
+    0.25turn,
+    rgba(135, 240, 226, 0.781),
+    rgba(126, 35, 126, 0)
+  );
+  border: 2px solid $accent-color2;
+  border-radius: unset;
+  @include for-size(tablet) {
+    border-radius: 5px;
+    background: transparent;
+    color: $accent-color;
+    border: 2px solid $accent-color;
+    top: -15px;
+    right: -400px;
+    font-size: 25px;
+  }
+
+  @include for-size(desktop) {
+    top: -13px;
+    right: -500px;
+  }
+}
+
+.span-about {
+  margin-left: 10px;
+}
